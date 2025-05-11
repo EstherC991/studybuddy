@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Your CSS file -->
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="background-effects"></div>
+    
+    <div class="feedback-container">
+        <form class="feedback-form" id="feedbackForm">
+            <!-- Role Selection -->
+            <div class="form-group">
+                <label class="form-label">Feedback Provider</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="role" value="student" checked>
+                        <span>Student</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="role" value="tutor">
+                        <span>Tutor</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="role" value="instructor">
+                        <span>Instructor</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Feedback Type -->
+            <div class="form-group">
+                <label class="form-label">Type of feedback</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="feedbackType" value="bug" checked>
+                        <span>Bug</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="feedbackType" value="suggestion">
+                        <span>Suggestion</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="feedbackType" value="general">
+                        <span>General Comment</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Feedback Description -->
+            <div class="form-group">
+                <textarea 
+                    class="feedback-textarea" 
+                    placeholder="Describe your feedback..."
+                    required
+                ></textarea>
+            </div>
+
+            <!-- Rating -->
+            <div class="form-group">
+                <label class="form-label">Rating</label>
+                <div class="star-rating" id="starRating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+            </div>
+
+            <!-- Attachment -->
+            <div class="form-group">
+                <label class="attachment-btn">
+                    <i class="fas fa-paperclip"></i>
+                    <span>Attachment (optional)</span>
+                    <input type="file" id="fileAttachment" style="display: none;">
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">
+                Submit
+            </button>
+        </form>
+    </div>
+
+    <script>
+        // Star Rating Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.star');
+            let userRating = 0;
+
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = this.getAttribute('data-rating');
+                    userRating = rating;
+                    
+                    // Update stars visual
+                    stars.forEach(s => {
+                        if (s.getAttribute('data-rating') <= rating) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                });
+
+                star.addEventListener('mouseover', function() {
+                    const rating = this.getAttribute('data-rating');
+                    
+                    stars.forEach(s => {
+                        if (s.getAttribute('data-rating') <= rating) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                });
+
+                star.addEventListener('mouseout', function() {
+                    stars.forEach(s => {
+                        if (s.getAttribute('data-rating') <= userRating) {
+                            s.classList.add('active');
+                        } else {
+                            s.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+
+        // Form Submission
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Form submitted!');
+
+            // message after submission
+    
+            alert('Thank you for your feedback!');
+            // reset after user submission
+            this.reset();
+            
+            // Reset stars
+            document.querySelectorAll('.star').forEach(star => {
+                star.classList.remove('active');
+            });
+        });
+
+        // File Attachment
+        document.querySelector('.attachment-btn').addEventListener('click', function() {
+            document.getElementById('fileAttachment').click();
+        });
+
+        document.getElementById('fileAttachment').addEventListener('change', function() {
+            const fileName = this.files[0]?.name;
+            if (fileName) {
+                const span = this.parentElement.querySelector('span');
+                span.textContent = fileName;
+            }
+        });
+    </script>
+</body>
+</html>
+

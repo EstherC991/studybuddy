@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Buddy - Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="mesh-gradient"></div>
+    <div class="moving-gradient"></div>
+    <div class="glass-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="student-header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Campus Events</h1>
+                        <span class="subtitle">Join the Fun! 🎉</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="header-nav">
+                <ul>
+                    <li>
+                        <a href="home.html" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search events...">
+                </div>
+                <button class="create-event-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Create Event</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <div class="event-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card glass-effect">
+                    <div class="event-image-container">
+                        <img src="/Users/esctherc/Downloads/locallakecleanup.jpg" alt="Lake Cleanup">
+                        <span class="category-tag">Environment</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Local Lake Cleanup</h3>
+                        <p class="event-host">Hosted By: John Doe</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar"></i> May 15, 2025</span>
+                            <span><i class="far fa-clock"></i> 9:00 AM</span>
+                        </div>
+                        <p class="event-description">Help clean up the local lakes around Cranford, ensuring a clean and nice view for everyone.</p>
+                        <button class="join-btn">Join Event</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card glass-effect">
+                    <div class="event-image-container">
+                        <img src="/Users/esctherc/Downloads/ucnjstudentbonfire.jpeg" alt="Student Bonfire">
+                        <span class="category-tag">Social</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Student Bonfire</h3>
+                        <p class="event-host">Hosted By: Jane Smith</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar"></i> May 20, 2025</span>
+                            <span><i class="far fa-clock"></i> 7:00 PM</span>
+                        </div>
+                        <p class="event-description">Student Bonfire! Bring your friends and snacks! Enjoy as we bid farewell to old friends and welcome new ones.</p>
+                        <button class="join-btn">Join Event</button>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card glass-effect">
+                    <div class="event-image-container">
+                        <img src="/Users/esctherc/Downloads/ucnjadoption.jpeg" alt="Adoption Event">
+                        <span class="category-tag">Community</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Adoption Event</h3>
+                        <p class="event-host">Hosted By: Peter Jones</p>
+                        <div class="event-meta">
+                            <span><i class="far fa-calendar"></i> May 25, 2025</span>
+                            <span><i class="far fa-clock"></i> 10:00 AM</span>
+                        </div>
+                        <p class="event-description">Adoption event! Find your new best friend. Lots of cute animals looking for loving homes.</p>
+                        <button class="join-btn">Join Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>
+
